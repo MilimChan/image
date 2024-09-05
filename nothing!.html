@@ -1,24 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<html style="height: 100%;">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=0.1">
     <title>Random Image</title>
     <script>
-        var images = [
-            "https://raw.githubusercontent.com/MilimChan/image/main/anhcuatui/1.gif",
-            "https://raw.githubusercontent.com/MilimChan/image/main/anhcuatui/2.gif"
-        ];
-        var chosenImage = images[Math.floor(Math.random() * images.length)];
-        var fileName = chosenImage.substring(chosenImage.lastIndexOf('/') + 1);
-
         document.addEventListener("DOMContentLoaded", function() {
+            var images = [
+                "https://raw.githubusercontent.com/MilimChan/image/main/anhcuatui/1.gif",
+                "https://raw.githubusercontent.com/MilimChan/image/main/anhcuatui/2.gif"
+            ];
+            var chosenImage = images[Math.floor(Math.random() * images.length)];
+            var fileName = chosenImage.substring(chosenImage.lastIndexOf('/') + 1);
+
             document.title = fileName + " (120x120)";
             document.getElementById("randomImage").src = chosenImage;
         });
     </script>
 </head>
-<body style="margin: 0px; height: 100%; background-color: rgb(14, 14, 14);">
-    <img id="randomImage" style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;">
+<body style="margin: 0px; height: 100%; background-color: rgb(14, 14, 14); display: flex; justify-content: center; align-items: center;">
+    <img id="randomImage" style="display: block; -webkit-user-select: none; margin: auto; background-color: hsl(0, 0%, 90%); transition: background-color 300ms;">
 </body>
 </html>

@@ -11,8 +11,16 @@
             var chosenImage = images[Math.floor(Math.random() * images.length)];
             var fileName = chosenImage.substring(chosenImage.lastIndexOf('/') + 1);
 
+            // Cập nhật tiêu đề của trang
             document.title = fileName + " (120x120)";
+            
+            // Cập nhật nguồn của hình ảnh
             document.getElementById("randomImage").src = chosenImage;
+
+            // Thay đổi URL của trang web
+            if (history.replaceState) {
+                history.replaceState(null, null, chosenImage);
+            }
         });
     </script>
 </head>

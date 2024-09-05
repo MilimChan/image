@@ -1,30 +1,24 @@
-<html style="height: 100%;">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
-    <title>Random Image</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirect to Image</title>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        function redirectToImage() {
             var images = [
-                "https://raw.githubusercontent.com/MilimChan/image/main/anhcuatui/1.gif",
-                "https://raw.githubusercontent.com/MilimChan/image/main/anhcuatui/2.gif"
+                'https://raw.githubusercontent.com/MilimChan/image/main/anhcuatui/1.gif',
+                'https://raw.githubusercontent.com/MilimChan/image/main/anhcuatui/2.gif'
             ];
-            var chosenImage = images[Math.floor(Math.random() * images.length)];
-            var fileName = chosenImage.substring(chosenImage.lastIndexOf('/') + 1);
+            //
+            var randomImage = images[Math.floor(Math.random() * images.length)];
+            // 
+            window.location.href = randomImage;
+        }
 
-            // Cập nhật tiêu đề của trang
-            document.title = fileName + " (120x120)";
-            
-            // Cập nhật nguồn của hình ảnh
-            document.getElementById("randomImage").src = chosenImage;
-
-            // Thay đổi URL của trang web
-            if (history.replaceState) {
-                history.replaceState(null, null, chosenImage);
-            }
-        });
+        window.onload = redirectToImage;
     </script>
 </head>
-<body style="margin: 0px; height: 100%; background-color: rgb(14, 14, 14); display: flex; justify-content: center; align-items: center;">
-    <img id="randomImage" style="display: block; -webkit-user-select: none; margin: auto; background-color: hsl(0, 0%, 90%); transition: background-color 300ms;">
+<body>
 </body>
 </html>

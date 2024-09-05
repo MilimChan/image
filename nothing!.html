@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirect to Image</title>
+    <meta property="og:image" content="https://raw.githubusercontent.com/MilimChan/image/main/anhcuatui/1.gif">
+    <meta property="og:image:alt" content="Redirect to Image">
     <script>
         function redirectToImage() {
             var images = [
                 'https://raw.githubusercontent.com/MilimChan/image/main/anhcuatui/1.gif',
                 'https://raw.githubusercontent.com/MilimChan/image/main/anhcuatui/2.gif'
             ];
-            //
             var randomImage = images[Math.floor(Math.random() * images.length)];
-            // 
             window.location.href = randomImage;
         }
-
+        
         window.onload = redirectToImage;
     </script>
 </head>
